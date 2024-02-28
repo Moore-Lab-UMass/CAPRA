@@ -1,0 +1,1 @@
+ENCSR661FOW	Homo sapiens K562 genetically modified (episome) using transient transfection	cell line	Tim Reddy, Duke	NA	NA	ENCFF692WJN;ENCFF058NAC;ENCFF294XNE	ENCFF778LRW
