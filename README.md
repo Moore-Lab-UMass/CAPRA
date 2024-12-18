@@ -11,10 +11,9 @@ The initial step in the pipeline is to convert the STARR-seq BAM files to a BED 
 
 The input data format is detailed below and can be generated directly for ENCODE data using the script `pull-starr-bams.py` in the Bonus Scripts folder
 
-| Exp ID      | Biosample | Lab | Description | Local file location | RNA BAMs | DNA BAMs |
+| Exp ID      | Biosample | Lab | RNA BAMs | DNA BAMs |
 | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
-| ENCSR661FOW | K562  | Tim Reddy, Duke | NA | NA | ENCFF692WJN;ENCFF058NAC;ENCFF294XNE | ENCFF778LRW | 
-
+| ENCSR661FOW | K562  | Tim Reddy, Duke | ENCFF692WJN;ENCFF058NAC;ENCFF294XNE | ENCFF778LRW | 
 
 
 
