@@ -19,6 +19,10 @@ The input data format is detailed below and can be generated directly for ENCODE
 
 ## Step 1 - Extract overlapping fragments and create count matrix
 
+This step uses BEDTools to intersect the STARR-seq fragments with cCREs. All fragments that overlap one cCRE in its entirety count towards the "solo" quantifications. All fragments that overlap two cCREs in their entirety count towards the "double" quantifications. Script will output a matrix with rDHS ID in the first column followed by DNA fragment counts then RNA fragment counts.
+
+`./1_Extract-Fragments.sh`
+
 
 ## Step 2 - Run DESeq on matrices
 
