@@ -9,7 +9,7 @@ The initial step in the pipeline is to convert the STARR-seq BAM files to a BED 
 
 `./0_Pull-and-Prep-Data.sh`
 
-The input data format is detailed below and can be generated directly for ENCODE data using the script `pull-starr-bams.py` in the Bonus Scripts folder
+The input data format is detailed below and can be generated directly for ENCODE data using the script [pull-starr-bams.py](https://github.com/Moore-Lab-UMass/CAPRA/blob/main/Toolkit/pull-starr-bams.py) in the Toolkit folder
 
 | Exp ID      | Biosample | Lab | RNA BAMs | DNA BAMs |
 | ----------- | ----------- | ----------- | ----------- | ----------- |
@@ -18,13 +18,27 @@ The input data format is detailed below and can be generated directly for ENCODE
 
 
 ## Step 1 - Extract overlapping fragments and create count matrix
+This step creates quantification matrices by intersecting the STARR-seq fragments with cCREs. All fragments that overlap one cCRE in its entirety count towards the "solo" quantifications. All fragments that overlap two cCREs in their entirety count towards the "double" quantifications. Script will output a matrix with rDHS ID in the first column followed by DNA fragment counts then RNA fragment counts.
 
-This step uses BEDTools to intersect the STARR-seq fragments with cCREs. All fragments that overlap one cCRE in its entirety count towards the "solo" quantifications. All fragments that overlap two cCREs in their entirety count towards the "double" quantifications. Script will output a matrix with rDHS ID in the first column followed by DNA fragment counts then RNA fragment counts.
+**Input data:**
+* Fragment BED files from **Step 1**
+* [GRCh38 cCREs](https://users.moore-lab.org/ENCODE-cCREs/Supplementary-Data/Supplementary-Data-1.GRCh38-cCREs-V4.bed.gz)
+* [GRCh38 cCRE pairs](https://users.moore-lab.org/ENCODE-cCREs/Pipeline-Input-Files/GRCh38-cCRE-Adjacent-Pairs.bed.gz)
 
-`./1_Extract-Fragments.sh`
-
+**Required software:**
+* [BEDTools](https://bedtools.readthedocs.io/en/latest/) (verion 2.30.0 was used in [Moore...Weng (2024) *bioRxiv*](https://www.biorxiv.org/content/10.1101/2024.12.26.629296v1))
 
 ## Step 2 - Run DESeq on matrices
+This step calculates the normalized ratio of RNA to DNA fragments and statistical significance for each cCRE using DESeq2
 
+**Input data:**
+* Quantification matrices from **Step 2**
 
-## Step 3 - Compare solo and double quantifications
+**Additional scripts:**
+* [capra-deseq.R](https://github.com/Moore-Lab-UMass/CAPRA/blob/main/Toolkit/capra-deseq.R)
+
+**Required software:**
+* R (version 4.2.3 was used in [Moore...Weng (2024) *bioRxiv*](https://www.biorxiv.org/content/10.1101/2024.12.26.629296v1))
+* DESeq2 (version 1.38.0 was used in [Moore...Weng (2024) *bioRxiv*](https://www.biorxiv.org/content/10.1101/2024.12.26.629296v1))
+*Note - different versions of R and DESeq2 may produce slightly different quantifcation values*
+
