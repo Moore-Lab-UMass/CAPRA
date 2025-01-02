@@ -46,5 +46,5 @@ This step calculates the normalized ratio of RNA to DNA fragments and statistica
 * R (version 4.2.3 was used in [Moore...Weng (2024) *bioRxiv*](https://www.biorxiv.org/content/10.1101/2024.12.26.629296v1))
 * DESeq2 (version 1.38.0 was used in [Moore...Weng (2024) *bioRxiv*](https://www.biorxiv.org/content/10.1101/2024.12.26.629296v1))
 
-*Note - different versions of R and DESeq2 may produce slightly different quantifcation values*
+*Note - different versions of R and DESeq2 may produce slightly different quantification values*
 
