@@ -26,7 +26,7 @@ The initial step converts STARR-seq BAM files to a BED files denoting the positi
 This step creates quantification matrices by intersecting the STARR-seq fragments with cCREs. All fragments that overlap one cCRE in its entirety count towards the "solo" quantifications. All fragments that overlap two cCREs in their entirety count towards the "double" quantifications. Script will output a matrix with rDHS ID in the first column followed by DNA fragment counts then RNA fragment counts.
 
 **Input data:**
-* Fragment BED files from **Step 1**
+* Fragment BED files from **Step 0**
 * [GRCh38 cCREs](https://users.moore-lab.org/ENCODE-cCREs/Supplementary-Data/Supplementary-Data-1.GRCh38-cCREs-V4.bed.gz)
 * [GRCh38 cCRE pairs](https://users.moore-lab.org/ENCODE-cCREs/Pipeline-Input-Files/GRCh38-cCRE-Adjacent-Pairs.bed.gz)
 
@@ -37,7 +37,7 @@ This step creates quantification matrices by intersecting the STARR-seq fragment
 This step calculates the normalized ratio of RNA to DNA fragments and statistical significance for each cCRE using DESeq2
 
 **Input data:**
-* Quantification matrices from **Step 2**
+* Quantification matrices from **Step 1**
 
 **Additional scripts:**
 * [capra-deseq.R](https://github.com/Moore-Lab-UMass/CAPRA/blob/main/Toolkit/capra-deseq.R)
