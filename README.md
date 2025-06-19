@@ -1,7 +1,9 @@
-# CAPRA
+# CAPRA (CRE-centric Analysis and Prediction of Reporter Assays)
 ![image](https://github.com/Moore-Lab-UMass/CAPRA/assets/4357540/f0507fed-9121-40c8-b098-eab1e0f004a6)
 
-CRE-centric Analysis and Prediction of Reporter Assays
+The identification of functional regulatory elements from STARR-seq data typically relies on peak-calling algorithms that assess RNA enrichment over input DNA across the genome. However, this approach often produces broad peaks encompassing multiple candidate cis-regulatory elements (cCREs), limiting resolution and complicating the interpretation of element-specific activity. This challenge is particularly acute in dense regulatory regions where multiple functional elements may be closely spaced.
+
+To overcome this limitation, we developed CAPRA (CRE-centric Analysis and Prediction of Reporter Assays), a method that uses the Registry of cCREs as predefined anchors to directly quantify STARR-seq activity without requiring peak calling. CAPRA enables high-resolution, element-centric quantification of both enhancer and silencer activity by computing RNA-to-DNA fragment ratios for individual cCREs. It also supports quantification across cCRE pairs to assess potential combinatorial effects.
 
 ## Step 0 - Pull and prep data from ENCODE portal
 
