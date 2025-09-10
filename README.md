@@ -1,5 +1,6 @@
 # CAPRA (CRE-centric Analysis and Prediction of Reporter Assays)
-![image](https://github.com/Moore-Lab-UMass/CAPRA/assets/4357540/f0507fed-9121-40c8-b098-eab1e0f004a6)
+
+<img width="2288" height="1727" alt="CAPRA" src="https://github.com/user-attachments/assets/6c8e7a3b-eecb-4116-8acb-f1cccd306d65" />
 
 The identification of functional regulatory elements from STARR-seq data typically relies on peak-calling algorithms that assess RNA enrichment over input DNA across the genome. However, this approach often produces broad peaks encompassing multiple candidate cis-regulatory elements (cCREs), limiting resolution and complicating the interpretation of element-specific activity. This challenge is particularly acute in dense regulatory regions where multiple functional elements may be closely spaced.
 
