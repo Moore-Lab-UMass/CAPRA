@@ -1,4 +1,4 @@
-# CAPRA (CRE-centric Analysis and Prediction of Reporter Assays)
+# CAPRA Pipeline
 
 <img width="2288" height="1727" alt="CAPRA" src="https://github.com/user-attachments/assets/6c8e7a3b-eecb-4116-8acb-f1cccd306d65" />
 
