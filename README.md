@@ -22,7 +22,7 @@ The initial step converts STARR-seq BAM files to a BED files denoting the positi
 * [pull-starr-bams.py](https://github.com/Moore-Lab-UMass/CAPRA/blob/main/Toolkit/pull-starr-bams.py)
 
 **Required software:**
-* [BEDTools](https://bedtools.readthedocs.io/en/latest/) (verion 2.30.0 was used in [Moore...Weng (2024) *bioRxiv*](https://www.biorxiv.org/content/10.1101/2024.12.26.629296v1))
+* [BEDTools](https://bedtools.readthedocs.io/en/latest/) (version 2.30.0 was used in [Moore...Weng (2024) *bioRxiv*](https://www.biorxiv.org/content/10.1101/2024.12.26.629296v1))
 
 ## cCRE Centric Mode
 
@@ -54,3 +54,22 @@ This step calculates the normalized ratio of RNA to DNA fragments and statistica
 
 
 ## Paired Sweep Mode
+
+### Step 3 - Paired sweep mode
+This mode  evaluates partially overlapping STARR-seq fragments across the genomic interval between a pair of high-coverage cCREs to resolve fine-scale relationships between local sequence features and reporter activity.
+
+For each cCRE pair, there are two directional sweeps:
+* Forward sweep: Starting with fragments that fully overlap the first cCRE, CAPRA progressively tiles 10 bp windows toward the second cCRE, quantifying RNA and DNA fragment coverage at each step.
+* Reverse sweep: The same procedure is repeated in the opposite direction, starting from fragments that fully overlap the second cCRE and sweeping back toward the first.
+
+**Input data:**
+* Fragment BED files from **Step 0**
+* BED file of paired cCREs (2 lines total, example below)
+
+| chr | start  | end | anchor id | ccre id | class |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| chr1 | 46195852  | 46196010 | EH38D4377717 | EH38E2809119 | dELS |
+| chr1 | 46196098  | 46196283 | EH38D4377718 | EH38E2809120 | pELS |
+
+**Required software:**
+* [BEDTools](https://bedtools.readthedocs.io/en/latest/) (verion 2.30.0 was used in [Moore...Weng (2024) *bioRxiv*](https://www.biorxiv.org/content/10.1101/2024.12.26.629296v1))
