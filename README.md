@@ -24,8 +24,9 @@ The initial step converts STARR-seq BAM files to a BED files denoting the positi
 **Required software:**
 * [BEDTools](https://bedtools.readthedocs.io/en/latest/) (verion 2.30.0 was used in [Moore...Weng (2024) *bioRxiv*](https://www.biorxiv.org/content/10.1101/2024.12.26.629296v1))
 
+## cCRE Centric Mode
 
-## Step 1 - Extract overlapping fragments and create count matrix
+### Step 1 - Extract overlapping fragments and create count matrix
 This step creates quantification matrices by intersecting the STARR-seq fragments with cCREs. All fragments that overlap one cCRE in its entirety count towards the "solo" quantifications. All fragments that overlap two cCREs in their entirety count towards the "double" quantifications. Script will output a matrix with rDHS ID in the first column followed by DNA fragment counts then RNA fragment counts.
 
 **Input data:**
@@ -36,7 +37,7 @@ This step creates quantification matrices by intersecting the STARR-seq fragment
 **Required software:**
 * [BEDTools](https://bedtools.readthedocs.io/en/latest/) (verion 2.30.0 was used in [Moore...Weng (2024) *bioRxiv*](https://www.biorxiv.org/content/10.1101/2024.12.26.629296v1))
 
-## Step 2 - Run DESeq on matrices
+### Step 2 - Run DESeq on matrices
 This step calculates the normalized ratio of RNA to DNA fragments and statistical significance for each cCRE using DESeq2
 
 **Input data:**
@@ -51,3 +52,5 @@ This step calculates the normalized ratio of RNA to DNA fragments and statistica
 
 *Note - different versions of R and DESeq2 may produce slightly different quantification values*
 
+
+## Paired Sweep Mode
