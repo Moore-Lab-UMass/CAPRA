@@ -1,6 +1,8 @@
+#!/bin/bash
+
 #Jill Moore
 #Moore Lab - UMass Chan
-#February 2024
+#December 2024
 
 #Usage: ./1_Extract-Fragments.sh 
 
@@ -51,7 +53,7 @@ do
     mv tmp.tmp tmp.matrix
 done
 
-awk '{if (NR == 1 || $2 > 0) print $0}' tmp.matrix > $outputDir/$exp-Matrix.Solo-Filtered.V7.txt
+awk '{if (NR == 1 || $2 > 0) print $0}' tmp.matrix > $outputDir/$exp-Matrix.Solo-Filtered.txt
 rm tmp.*
 
 
@@ -87,7 +89,7 @@ do
     mv tmp.tmp tmp.matrix
 done
 
-awk '{if (NR == 1 || $2 > 0) print $0}' tmp.matrix > $outputDir/$exp-Matrix.Double-Pair.V7.txt
+awk '{if (NR == 1 || $2 > 0) print $0}' tmp.matrix > $outputDir/$exp-Matrix.Double-Pair.txt
 rm tmp.*
 
 cd

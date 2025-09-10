@@ -1,3 +1,4 @@
+#!/bin/bash
 
 #Jill Moore
 #Moore Lab - UMass Chan
